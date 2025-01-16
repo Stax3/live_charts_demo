@@ -14,8 +14,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: "#FD4F00",
-      }
+        brand: "#23700C",
+      },
+      fontFamily: {
+        display: ['Syne', 'sans-serif'],
+      },
     },
   },
   plugins: [

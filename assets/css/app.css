@@ -3,3 +3,8 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+
+html, body, [data-phx-root-id] {
+  height: 100%;
+  min-height: 100%;
+}
