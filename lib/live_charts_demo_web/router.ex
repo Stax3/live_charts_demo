@@ -17,7 +17,7 @@ defmodule LiveChartsDemoWeb.Router do
   scope "/", LiveChartsDemoWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", DemoLive.Index
   end
 
   # Other scopes may use custom stacks.
