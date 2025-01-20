@@ -15,6 +15,8 @@ module.exports = {
     extend: {
       colors: {
         brand: "#23700C",
+        dark: "#3F3F46",
+        accent: "#F4F4F5"
       },
       fontFamily: {
         display: ['Syne', 'sans-serif'],

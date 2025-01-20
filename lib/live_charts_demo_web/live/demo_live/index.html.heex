@@ -1,1 +1,47 @@
-Demo here
+<div class="flex flex-row min-h-full">
+  <div class="shrink-0 max-w-3/5 w-72 border-r border-accent min-h-full">
+    <div class="flex flex-row items-center border-b border-accent w-full py-1">
+      <div class="text-sm font-medium pl-6">Adapter</div>
+
+      <select
+        name="adapter"
+        class="grow block w-full border-none bg-white focus:ring-0 text-sm text-brand"
+        value={@adapter.value}
+      >
+        {Phoenix.HTML.Form.options_for_select(@adapter.options, @adapter.value)}
+      </select>
+    </div>
+
+    <div class="flex flex-col gap-2 px-3 py-5 text-sm">
+      <div
+        :for={{key, label} <- @templates}
+        class={[
+          "hover:bg-brand/5 text-brand px-4 py-2 rounded-full cursor-pointer",
+          if(key == @selected.key, do: "bg-brand/5")
+        ]}
+        phx-click="select-template"
+        phx-value-key={key}
+      >
+        {label}
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full p-10">
+    <h2 class="font-display text-brand text-xl mb-10">
+      {@selected.label}
+    </h2>
+
+    <div class="flex flex-row flex-wrap-reverse gap-10 w-full">
+      <div class="grow text-xs text-brand bg-brand/5 p-6 rounded overflow-x-scroll">
+        <pre>{@code}</pre>
+      </div>
+
+      <div class="grow">
+        <div class="h-[400px]">
+          <LiveCharts.chart chart={@chart} />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
