@@ -33,12 +33,16 @@
     </h2>
 
     <div class="flex flex-row flex-wrap-reverse gap-10 w-full">
-      <div class="grow text-xs text-brand bg-brand/5 p-6 rounded overflow-x-scroll">
-        <pre>{@code}</pre>
+      <div class="grow">
+        <pre class="text-xs text-brand bg-brand/5 p-6 rounded overflow-x-scroll">{@code}</pre>
+
+        <div :if={@url} class="mt-4 text-brand/60 text-sm">
+          For more details, see <a href={@url} target="_blank" class="text-brand underline">the documentation</a>.
+        </div>
       </div>
 
       <div class="grow">
-        <div class="h-[400px]">
+        <div class="min-h-[400px]">
           <LiveCharts.chart chart={@chart} />
         </div>
       </div>
