@@ -32,7 +32,7 @@ defmodule LiveChartsDemo.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:live_charts, "~> 0.3.0"},
+      {:live_charts, "~> 0.4.0"},
       {:phoenix, "~> 1.7.14"},
       {:phoenix_html, "~> 4.1"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
